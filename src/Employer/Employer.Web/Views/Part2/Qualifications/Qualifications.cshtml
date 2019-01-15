@@ -2,10 +2,10 @@
 @using Esfa.Recruit.Shared.Web.Mappers
 @using Esfa.Recruit.Vacancies.Client.Domain.Entities
 @model QualificationsViewModel
-<div class="grid-row">
-    <div class="column-full">
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
 
-        <h1 class="heading-xlarge small-bottom-margin">@Model.Title</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">@Model.Title</h1>
         <hr>
 
         <partial name="@PartialNames.ValidationSummary" model='new ValidationSummaryViewModel { ModelState = ViewData.ModelState, OrderedFieldNames = Model.OrderedFieldNames }' />
@@ -13,10 +13,9 @@
         <partial name="@PartialNames.ReviewSummary" for="Review" />
 
         <form asp-route="@RouteNames.Qualifications_Post">
+            <span esfa-validation-message-for="Qualifications" class="govuk-error-message"></span>
 
-            <span esfa-validation-message-for="Qualifications" class="error-message"></span>
-
-            <div esfa-validation-marker-for="QualificationType" class="form-group form-group-compound">
+            <div esfa-validation-marker-for="QualificationType" class="govuk-form-group govuk-form-group-compound">
                 <label asp-for="QualificationType" class="form-label-bold" id="@Anchors.QualificationsHeading">Add qualifications applicants should have</label>
                 <span esfa-validation-message-for="QualificationType" class="error-message"></span>
                 <select asp-for="QualificationType" class="form-control">
@@ -29,19 +28,19 @@
                 </select>
             </div>
 
-            <div esfa-validation-marker-for="Subject" class="form-group form-group-compound">
+            <div esfa-validation-marker-for="Subject" class="govuk-form-group govuk-form-group-compound">
                 <label asp-for="Subject" class="form-label-bold">Subject</label>
                 <span esfa-validation-message-for="Subject" class="error-message"></span>
                 <input asp-for="Subject" value="@Model.Subject" type="text" class="form-control" maxlength="50">
             </div>
 
-            <div esfa-validation-marker-for="Grade" class="form-group" data-bind="parentvalElement:grade">
+            <div esfa-validation-marker-for="Grade" class="govuk-form-group" data-bind="parentvalElement:grade">
                 <label asp-for="Grade" class="form-label-bold">Grade</label>
                 <span esfa-validation-message-for="Grade" class="error-message"></span>
                 <input asp-for="Grade" value="@Model.Grade" type="text" class="form-control form-control-1-3" maxlength="30">
             </div>
 
-            <div esfa-validation-marker-for="Weighting" class="form-group">
+            <div  esfa-validation-marker-for="Weighting" class="govuk-form-group">
                 <fieldset class="inline">
                     <legend>
                         <h1 class="form-label-bold">Is this qualification essential?</h1>
@@ -58,7 +57,7 @@
                 </fieldset>
             </div>
 
-            <div class="form-group">
+            <div class="govuk-form-group">
                 <button type="submit" name="AddQualificationAction" id="add-qualification" value="AddQualification" class="button button-secondary save-button">+ Add this qualification</button>
             </div>
 

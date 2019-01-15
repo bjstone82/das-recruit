@@ -1,26 +1,26 @@
 ﻿@model Esfa.Recruit.Employer.Web.ViewModels.AboutEmployerViewModel
-<div class="grid-row">
-    <div class="column-two-thirds">
-        <h1 class="heading-xlarge small-bottom-margin">@Model.Title</h1>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">@Model.Title</h1>
         <hr>
         <partial name="@PartialNames.ValidationSummary" model='new ValidationSummaryViewModel { ModelState = ViewData.ModelState, OrderedFieldNames = Model.OrderedFieldNames }' />
 
         <partial name="@PartialNames.ReviewSummary" for="Review" />
 
         <form asp-route="@RouteNames.AboutEmployer_Get">
-            <div esfa-validation-marker-for="EmployerDescription" class="form-group">
+            <div esfa-validation-marker-for="EmployerDescription" class="govuk-form-group">
                 <label asp-for="EmployerDescription" class="form-label-bold">Tell us about your organisation</label>
                 <span esfa-validation-message-for="EmployerDescription" class="error-message"></span>
                 <textarea asp-for="EmployerDescription" class="form-control form-control-3-4 character-count" rows="5" data-val-length-max="500"></textarea>
                 <span class="maxchar-count">500</span>
                 <span class="maxchar-text"> characters remaining</span>
             </div>
-            <div esfa-validation-marker-for="EmployerWebsiteUrl" class="form-group">
+            <div esfa-validation-marker-for="EmployerWebsiteUrl" class="govuk-form-group">
                 <label asp-for="EmployerWebsiteUrl" class="form-label-bold">Your organisation's website (optional)</label>
                 <span esfa-validation-message-for="EmployerWebsiteUrl" class="error-message"></span>
                 <input asp-for="EmployerWebsiteUrl" class="form-control" maxlength="100" />
             </div>
-            <div class="form-group">
+            <div class="govuk-form-group">
                 <input type="submit" value="Save and continue" esfa-automation="btn-continue" class="button save-button" />
                 <a asp-route="@RouteNames.Vacancy_Preview_Get" esfa-automation="cancel" class="button-link">Cancel</a>
             </div>

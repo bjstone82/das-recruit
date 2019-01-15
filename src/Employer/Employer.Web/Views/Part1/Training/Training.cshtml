@@ -5,11 +5,11 @@
     var exampleStartingDate = exampleClosingDate.AddDays(14);
 }
 
-<div class="grid-row">
-    <div class="column-full">
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
         <a asp-show="@Model.PageInfo.IsWizard" asp-route="@RouteNames.Employer_Get" esfa-automation="link-back" class="button-link">Back</a>
 
-        <h1 class="heading-xlarge small-bottom-margin">Important dates</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Important dates</h1>
 
         <partial name="@PartialNames.ValidationSummary" model='new ValidationSummaryViewModel { ModelState = ViewData.ModelState, OrderedFieldNames = Model.OrderedFieldNames }'/>
 
@@ -17,7 +17,7 @@
 
         <form asp-route="@RouteNames.Training_Post" asp-route-wizard="@Model.PageInfo.IsWizard" novalidate>
 
-            <div esfa-validation-marker-for="ClosingDate" class="form-group">
+            <div esfa-validation-marker-for="ClosingDate" class="govuk-form-group">
                 <fieldset>
                     <legend class="form-label-bold">Application closing date<span class="visuallyhidden"> (in numeric format DD MM YYYY)</span></legend>
                     <span class="form-hint">For example, @exampleClosingDate.AsInputHintDisplayDate()</span>
@@ -25,15 +25,15 @@
                     <span esfa-validation-message-for="ClosingDate" class="error-message"></span>
 
                     <div class="form-date">
-                        <div class="form-group form-group-day">
+                        <div class="govuk-form-group govuk-form-group-day">
                             <label asp-for="ClosingDay" class="form-label">Day</label>
                             <input asp-for="ClosingDay" class="form-control" type="number" min="1" max="31">
                         </div>
-                        <div class="form-group form-group-month">
+                        <div class="govuk-form-group govuk-form-group-month">
                             <label asp-for="ClosingMonth" class="form-label">Month</label>
                             <input asp-for="ClosingMonth" class="form-control" type="number" min="1" max="12">
                         </div>
-                        <div class="form-group form-group-year">
+                        <div class="govuk-form-group govuk-form-group-year">
                             <label asp-for="ClosingYear" class="form-label">Year</label>
                             <input asp-for="ClosingYear" class="form-control" type="number" min="@Model.CurrentYear">
                         </div>
@@ -41,7 +41,7 @@
                 </fieldset>
             </div>
 
-            <div esfa-validation-marker-for="StartDate" class="form-group">
+            <div esfa-validation-marker-for="StartDate" class="govuk-form-group">
                 <fieldset>
                     <legend class="form-label-bold">When do you expect the apprentice to start?<span class="visuallyhidden"> (in numeric format DD MM YYYY)</span></legend>
                     <span class="form-hint">For example, @exampleStartingDate.AsInputHintDisplayDate()</span>
@@ -49,15 +49,15 @@
                     <span esfa-validation-message-for="StartDate" class="error-message"></span>
 
                     <div class="form-date">
-                        <div class="form-group form-group-day">
+                        <div class="govuk-form-group govuk-form-group-day">
                             <label asp-for="StartDay" class="form-label">Day</label>
                             <input asp-for="StartDay" class="form-control" type="number" min="1" max="31">
                         </div>
-                        <div class="form-group form-group-month">
+                        <div class="govuk-form-group govuk-form-group-month">
                             <label asp-for="StartMonth" class="form-label">Month</label>
                             <input asp-for="StartMonth" class="form-control" type="number" min="1" max="12">
                         </div>
-                        <div class="form-group form-group-year">
+                        <div class="govuk-form-group govuk-form-group-year">
                             <label asp-for="StartYear" class="form-label">Year</label>
                             <input asp-for="StartYear" class="form-control" type="number" min="@Model.CurrentYear">
                         </div>
@@ -65,7 +65,7 @@
                 </fieldset>
             </div>
 
-            <div esfa-validation-marker-for="SelectedProgrammeId" class="form-group">
+            <div esfa-validation-marker-for="SelectedProgrammeId" class="govuk-form-group">
                 <label asp-for="SelectedProgrammeId" class="form-label-bold">Search for apprenticeship training<span class="visuallyhidden"> Press Enter key to activate list of apprenticeship standards and frameworks</span></label>
                 <span class="form-hint">Start typing the name of the course or choose an option from the list</span>
                 <span esfa-validation-message-for="SelectedProgrammeId" class="error-message"></span>
@@ -79,7 +79,7 @@
                 </select>
             </div>
 
-            <div class="form-group">
+            <div class="govuk-form-group">
                 <fieldset>
                     <legend class="form-label-bold">Disability Confident (optional)</legend>
                     <div class="multiple-choice">

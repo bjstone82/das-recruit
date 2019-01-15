@@ -3,10 +3,10 @@
 @model SkillsViewModel
 
 
-<div class="grid-row">
-    <div class="column-full">
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
 
-        <h1 class="heading-xlarge small-bottom-margin">@Model.Title</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">@Model.Title</h1>
         <hr>
 
         <partial name="@PartialNames.ValidationSummary" model='new ValidationSummaryViewModel { ModelState = ViewData.ModelState}' />
@@ -15,7 +15,7 @@
 
         <form asp-route="@RouteNames.Skills_Post" id="skillsForm">
             <fieldset>
-                <legend class="heading-small" id="@Anchors.SkillsHeading">Select skills and personal qualities applicants need for this apprenticeship</legend>
+                <legend class="govuk-heading-s" id="@Anchors.SkillsHeading">Select skills and personal qualities applicants need for this apprenticeship</legend>
 
                 <div class="body-text form-hint">Select all that apply or add your own</div>
 
@@ -45,8 +45,8 @@
                 </div>
             </fieldset>
 
-            <p class="no-bottom-margin">or</p>
-            <div class="form-group form-group-compound">
+            <p class="govuk-!-margin-bottom-0">or</p>
+            <div class="govuk-form-group govuk-form-group-compound">
                 <label asp-for="AddCustomSkillName" class="form-label-bold">Add a new desired skill or personal quality</label>
                 <span esfa-validation-message-for="AddCustomSkillName" class="error-message"></span>
                 <input asp-for="AddCustomSkillName" value="@Model.AddCustomSkillName" type="text" class="form-control" maxlength="30">

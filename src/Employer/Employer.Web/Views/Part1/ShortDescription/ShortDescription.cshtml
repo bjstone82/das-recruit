@@ -1,12 +1,12 @@
 ﻿@using Esfa.Recruit.Shared.Web.Mappers
 @model Esfa.Recruit.Employer.Web.ViewModels.Part1.ShortDescription.ShortDescriptionViewModel
 
-<div class="grid-row">
-    <div class="column-two-thirds">
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
         
         <a asp-show="@Model.PageInfo.IsWizard" asp-route="@RouteNames.Title_Get" esfa-automation="link-back" class="button-link">Back</a>
 
-        <h1 class="heading-xlarge small-bottom-margin">Brief overview</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Brief overview</h1>
 
         <partial name="@PartialNames.ValidationSummary" model='new ValidationSummaryViewModel { ModelState = ViewData.ModelState, OrderedFieldNames = Model.OrderedFieldNames }'/>
 
@@ -14,10 +14,10 @@
     </div>
 </div>
 
-<div class="grid-row">
-    <div class="column-full">
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
         <form asp-route="@RouteNames.ShortDescription_Post" asp-route-wizard="@Model.PageInfo.IsWizard" novalidate>
-            <div esfa-validation-marker-for="ShortDescription" class="form-group">
+            <div esfa-validation-marker-for="ShortDescription" class="govuk-form-group">
                 <label asp-for="ShortDescription" class="form-label-bold">
                     Write a few sentences to describe your vacancy
                 </label>

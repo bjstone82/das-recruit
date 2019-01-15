@@ -1,9 +1,9 @@
 ﻿@model Esfa.Recruit.Employer.Web.ViewModels.VacancyManage.EditVacancyViewModel
 
-<div class="grid-row">
-    <div class="column-full">
-        <div class="info-summary small-top-margin" role="alert" aria-labelledby="info-summary-heading-example-2" tabindex="-1">
-            <h3 class="heading-medium no-top-margin">You can edit the following information:</h3>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="info-summary govuk-!-margin-top-6" role="alert" aria-labelledby="info-summary-heading-example-2" tabindex="-1">
+            <h3 class="govuk-heading-m govuk-!-margin-top-0">You can edit the following information:</h3>
             <ul class="info-summary-list">
                 <li><a href="#closingDateSection" class="summary-link">Closing date</a></li>
                 <li><a href="#possibleStartDateSection" class="summary-link">Possible start date</a></li>
@@ -11,9 +11,9 @@
         </div>
     </div>
 </div>
-<div class="grid-row">
-    <div class="column-full">
-        <h1 class="heading-xlarge" id="vacancy-header">
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl" id="vacancy-header">
             @Model.Title
             <span class="heading-secondary">@Model.EmployerName</span>
         </h1>
@@ -21,8 +21,8 @@
 </div>
 <partial name="@PartialNames.EditVacancyPartial" model="Model" />
 
-<div class="form-group inline">
-    <div class="form-group small-top-margin">
+<div class="govuk-form-group inline">
+    <div class="govuk-form-group govuk-!-margin-top-6">
         <form class="form-inline" asp-show="@Model.HasChanges" asp-route="@RouteNames.SubmitVacancyChanges_Post" novalidate>
             <input type="hidden" name="ProposedClosingDate" value="@Model.ProposedClosingDateFormValue" />
             <input type="hidden" name="ProposedStartDate" value="@Model.ProposedStartDateFormValue" />
