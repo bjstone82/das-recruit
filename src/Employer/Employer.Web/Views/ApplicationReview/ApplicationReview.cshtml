@@ -16,7 +16,7 @@
         <section>
             <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">@Model.Name</h1>
             <div class="govuk-!-margin-bottom-6">
-                <span class="bold">Application ID: </span>@Model.FriendlyId
+                <span class="govuk-!-font-weight-bold">Application ID: </span>@Model.FriendlyId
             </div>
 
             <partial name="@PartialNames.ValidationSummary" model='new ValidationSummaryViewModel { ModelState = ViewData.ModelState, OrderedFieldNames = Model.OrderedFieldNames }' />
@@ -47,15 +47,15 @@
             <h2 class="govuk-heading-l">About you</h2>
 
             <div class="govuk-form-group">
-                <span class="form-label-bold">What are your main strengths?</span>
+                <span class="govuk-label govuk-!-font-weight-bold">What are your main strengths?</span>
                 <span>@Model.Strengths</span>
             </div>
             <div class="govuk-form-group">
-                <span class="form-label-bold">What skills would you like to improve during this apprenticeship?</span>
+                <span class="govuk-label govuk-!-font-weight-bold">What skills would you like to improve during this apprenticeship?</span>
                 <span>@Model.Improvements</span>
             </div>
             <div class="govuk-form-group">
-                <span class="form-label-bold">What are your hobbies and interests?</span>
+                <span class="govuk-label govuk-!-font-weight-bold">What are your hobbies and interests?</span>
                 <span>@Model.HobbiesAndInterests</span>
             </div>
         </section>
@@ -268,7 +268,7 @@
             <p>@Model.Status.Value.GetDisplayName()</p>
             <p>@Model.CandidateFeedback</p>
 
-            <p><a asp-route="@RouteNames.VacancyManage_Get" class="button">Return to vacancy</a></p>
+            <p><a asp-route="@RouteNames.VacancyManage_Get" class="govuk-button">Return to vacancy</a></p>
         </section>
 
         <form asp-show="@Model.CanChangeOutcome" asp-route="@RouteNames.ApplicationReview_Post">
@@ -277,24 +277,24 @@
 
                 <div esfa-validation-marker-for="Outcome" class="govuk-form-group">
                     <fieldset>
-                        <span esfa-validation-message-for="Outcome" class="error-message"></span>
+                        <span esfa-validation-message-for="Outcome" class="govuk-error-message"></span>
                         <div class="multiple-choice">
-                            <input asp-for="Outcome" id="outcome-successful" type="radio" value="@ApplicationReviewStatus.Successful.ToString()" checked="@(Model.Outcome == ApplicationReviewStatus.Successful ? "checked" : null)">
+                            <input asp-for="Outcome" class="govuk-radios__input" id="outcome-successful" type="radio" value="@ApplicationReviewStatus.Successful.ToString()" checked="@(Model.Outcome == ApplicationReviewStatus.Successful ? "checked" : null)">
                             <label for="outcome-successful">Successful</label>
                         </div>
 
                         <div class="multiple-choice" data-target="unsuccessful-candidate-feedback">
-                            <input asp-for="Outcome" id="outcome-unsuccessful" type="radio" value="@ApplicationReviewStatus.Unsuccessful.ToString()" checked="@(Model.Outcome == ApplicationReviewStatus.Unsuccessful ? "checked" : null)">
+                            <input asp-for="Outcome" class="govuk-radios__input" id="outcome-unsuccessful" type="radio" value="@ApplicationReviewStatus.Unsuccessful.ToString()" checked="@(Model.Outcome == ApplicationReviewStatus.Unsuccessful ? "checked" : null)">
                             <label for="outcome-unsuccessful">Unsuccessful</label>
                         </div>
                     </fieldset>
                 </div>
                 <div esfa-validation-marker-for="CandidateFeedback" id="unsuccessful-candidate-feedback" class="panel panel-border-narrow js-hidden">
                     <div class="govuk-form-group">
-                        <label asp-for="CandidateFeedback" class="form-label-bold">Feedback</label>
-                        <span esfa-validation-message-for="CandidateFeedback" class="error-message"></span>
-                        <span class="form-hint">Explain why the application has been unsucessful, your comments will be sent to the candidate.</span>
-                        <textarea asp-for="CandidateFeedback" class="form-control form-control-3-4" cols="20" size="12" type="text"></textarea>
+                        <label asp-for="CandidateFeedback" class="govuk-label govuk-!-font-weight-bold">Feedback</label>
+                        <span esfa-validation-message-for="CandidateFeedback" class="govuk-error-message"></span>
+                        <span class="govuk-hint">Explain why the application has been unsucessful, your comments will be sent to the candidate.</span>
+                        <textarea asp-for="CandidateFeedback" class="govuk-textarea" cols="20" size="12"></textarea>
                     </div>
                 </div>
 
@@ -304,9 +304,9 @@
 
             <section>
                 <div class="govuk-form-group hide-print">
-                    <button type="submit" class="button">Save</button>
+                    <button type="submit" class="govuk-button">Save</button>
 
-                    <a asp-route="@RouteNames.VacancyManage_Get" class="button-link">Cancel</a>
+                    <a asp-route="@RouteNames.VacancyManage_Get" class="das-button-link">Cancel</a>
                 </div>
             </section>
         </form>

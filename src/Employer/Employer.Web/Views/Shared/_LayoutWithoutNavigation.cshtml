@@ -88,7 +88,7 @@ public bool IsErrorPage()
         <p>@ViewContext.ViewData[ViewDataKeys.PlannedOutageMessage]</p>
         <form asp-route="@RouteNames.DismissOutageMessage_Post" novalidate>
             <input type="hidden" id="returnUrl" name="returnUrl" value="@ViewContext.HttpContext.Request.Path" />
-            <button type="submit" class="button-fake-link">Dismiss</button>
+            <button type="submit" class="govuk-button-fake-link">Dismiss</button>
         </form>
     </div>
 

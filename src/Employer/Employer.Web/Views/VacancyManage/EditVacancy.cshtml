@@ -26,9 +26,9 @@
         <form class="form-inline" asp-show="@Model.HasChanges" asp-route="@RouteNames.SubmitVacancyChanges_Post" novalidate>
             <input type="hidden" name="ProposedClosingDate" value="@Model.ProposedClosingDateFormValue" />
             <input type="hidden" name="ProposedStartDate" value="@Model.ProposedStartDateFormValue" />
-            <button type="submit" class="button save-button">Publish</button>
+            <button type="submit" class="govuk-button save-button">Publish</button>
         </form>
-        <a asp-show="@Model.HasChanges" asp-route="@RouteNames.CancelVacancyChanges_Get" class="button-link">Cancel</a>
-        <a asp-show="@Model.IsUnchanged" asp-route="@RouteNames.VacancyManage_Get" class="button">Return to manage vacancy</a>
+        <a asp-show="@Model.HasChanges" asp-route="@RouteNames.CancelVacancyChanges_Get" class="das-button-link">Cancel</a>
+        <a asp-show="@Model.IsUnchanged" asp-route="@RouteNames.VacancyManage_Get" class="govuk-button">Return to manage vacancy</a>
     </div>
 </div>    

@@ -4,12 +4,12 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <partial name="@PartialNames.ValidationSummary" model='new ValidationSummaryViewModel { ModelState = ViewData.ModelState, OrderedFieldNames = Model.OrderedFieldNames }' />
-        <div class="todo govuk-!-margin-top-6">
+        <div class="grey-border govuk-!-margin-top-6">
             <form asp-route="@RouteNames.VacancyEditDates_Post" novalidate>
                 <div esfa-validation-marker-for="ClosingDate" class="govuk-form-group">
                     <fieldset>
-                        <legend class="form-label-bold">Closing date for applications</legend>
-                        <span esfa-validation-message-for="ClosingDate" class="error-message"></span>
+                        <legend class="govuk-label govuk-!-font-weight-bold">Closing date for applications</legend>
+                        <span esfa-validation-message-for="ClosingDate" class="govuk-error-message"></span>
                         <div class="form-date">
                             <div class="govuk-form-group govuk-form-group-day">
                                 <label asp-for="ClosingDay" class="form-label">Day</label>
@@ -43,8 +43,8 @@
 
                 <div esfa-validation-marker-for="StartDate" class="govuk-form-group">
                     <fieldset>
-                        <legend class="form-label-bold">Possible start date</legend>
-                        <span esfa-validation-message-for="StartDate" class="error-message"></span>
+                        <legend class="govuk-label govuk-!-font-weight-bold">Possible start date</legend>
+                        <span esfa-validation-message-for="StartDate" class="govuk-error-message"></span>
                         <div class="form-date">
                             <div class="govuk-form-group govuk-form-group-day">
                                 <label asp-for="StartDay" class="form-label">Day</label>
@@ -63,11 +63,11 @@
                 </div>
 
                 <div class="govuk-form-group">
-                    <label class="form-label-bold" for="apprenticeship-type">Apprenticeship training</label>
+                    <label class="govuk-label govuk-!-font-weight-bold" for="apprenticeship-type">Apprenticeship training</label>
                     <p>@Model.ProgammeName</p>
                 </div>
-                <button type="submit" class="button save-button">Preview changes</button>
-                <a asp-route="@RouteNames.VacancyEdit_Get" class="button-link">Cancel</a>
+                <button type="submit" class="govuk-button save-button">Preview changes</button>
+                <a asp-route="@RouteNames.VacancyEdit_Get" class="das-button-link">Cancel</a>
             </form>
         </div>
     </div>

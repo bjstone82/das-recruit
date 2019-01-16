@@ -7,7 +7,7 @@
 
         <div class="notice govuk-!-margin-bottom-8">
             <i class="icon icon-important">
-                <span class="visually-hidden">Warning</span>
+                <span class="govuk-visually-hidden">Warning</span>
             </i>
             
             <p>
@@ -23,9 +23,9 @@
                 </strong>
                 </p>
         </div>
-        <a asp-route="@RouteNames.Dashboard_AccountsAgreements" class="button">Review agreement</a>
+        <a asp-route="@RouteNames.Dashboard_AccountsAgreements" class="govuk-button">Review agreement</a>
         
-        <a asp-show="@Model.PageInfo.IsWizard" asp-route="@RouteNames.Training_Get" class="button-link">Continue anyway</a>
-        <a asp-show="@Model.PageInfo.IsNotWizard" asp-route="@RouteNames.Vacancy_Preview_Get" asp-fragment="@Anchors.AboutEmployerSection" class="button-link">Continue anyway</a>
+        <a asp-show="@Model.PageInfo.IsWizard" asp-route="@RouteNames.Training_Get" class="das-button-link">Continue anyway</a>
+        <a asp-show="@Model.PageInfo.IsNotWizard" asp-route="@RouteNames.Vacancy_Preview_Get" asp-fragment="@Anchors.AboutEmployerSection" class="das-button-link">Continue anyway</a>
     </div>
 </div>
