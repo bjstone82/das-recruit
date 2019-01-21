@@ -22,7 +22,7 @@
             <partial name="@PartialNames.ValidationSummary" model='new ValidationSummaryViewModel { ModelState = ViewData.ModelState, OrderedFieldNames = Model.OrderedFieldNames }' />
 
             <div class="panel panel-border-narrow">
-                <p>
+                <p class="govuk-body">
                     @Html.Raw(
                                          string.Join("<br>",
                                              new[]
@@ -36,7 +36,7 @@
                                              }.Where(s => !string.IsNullOrWhiteSpace(s))
                                                  .Select(WebUtility.HtmlEncode)))
                 </p>
-                <p>
+                <p class="govuk-body">
                     @Model.Phone
                     <br> <a href="mailto:@Model.Email">@Model.Email</a>
                 </p>
@@ -276,7 +276,7 @@
                 <h3 class="govuk-heading-l">Outcome</h3>
 
                 <div esfa-validation-marker-for="Outcome" class="govuk-form-group">
-                    <fieldset>
+                    <fieldset class="govuk-fieldset">
                         <span esfa-validation-message-for="Outcome" class="govuk-error-message"></span>
                         <div class="multiple-choice">
                             <input asp-for="Outcome" class="govuk-radios__input" id="outcome-successful" type="radio" value="@ApplicationReviewStatus.Successful.ToString()" checked="@(Model.Outcome == ApplicationReviewStatus.Successful ? "checked" : null)">
