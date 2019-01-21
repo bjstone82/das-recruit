@@ -432,7 +432,7 @@ public IHtmlContent EditLink(string routeName, VacancyPreviewSectionState state,
                 <form asp-show="@Model.CanSubmit" asp-route="@RouteNames.Preview_Submit_Post" class="form-inline">
                     <input type="submit" value="@Model.SubmitButtonText" class="govuk-button" />
                 </form>
-                <a asp-route="@RouteNames.Dashboard_Index_Get" class="das-button-link">Return to dashboard</a>
+                <a asp-route="@RouteNames.Dashboard_Index_Get" class="govuk-link das-button-link">Return to dashboard</a>
                 <a asp-show="@Model.CanDelete" asp-route="@RouteNames.DeleteVacancy_Delete_Get" class="govuk-button delete-button">Delete</a>
             </div>
         </div>
