@@ -2,9 +2,9 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-        <div class="info-summary govuk-!-margin-top-6" role="alert" aria-labelledby="info-summary-heading-example-2" tabindex="-1">
+        <div class="info-summary govuk-!-margin-top-6" role="alert" tabindex="-1">
             <h3 class="govuk-heading-m govuk-!-margin-top-0">You can edit the following information:</h3>
-            <ul class="info-summary-list">
+            <ul class="govuk-list">
                 <li><a href="#closingDateSection" class="govuk-link">Closing date</a></li>
                 <li><a href="#possibleStartDateSection" class="govuk-link">Possible start date</a></li>
             </ul>
@@ -21,9 +21,9 @@
 </div>
 <partial name="@PartialNames.EditVacancyPartial" model="Model" />
 
-<div class="govuk-form-group inline">
+<div class="govuk-form-group">
     <div class="govuk-form-group govuk-!-margin-top-6">
-        <form class="form-inline" asp-show="@Model.HasChanges" asp-route="@RouteNames.SubmitVacancyChanges_Post" novalidate>
+        <form asp-show="@Model.HasChanges" asp-route="@RouteNames.SubmitVacancyChanges_Post" novalidate>
             <input type="hidden" name="ProposedClosingDate" value="@Model.ProposedClosingDateFormValue" />
             <input type="hidden" name="ProposedStartDate" value="@Model.ProposedStartDateFormValue" />
             <button type="submit" class="govuk-button save-button">Publish</button>
