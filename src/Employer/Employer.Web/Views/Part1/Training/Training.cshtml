@@ -6,8 +6,8 @@
 }
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <a asp-show="@Model.PageInfo.IsWizard" asp-route="@RouteNames.Employer_Get" esfa-automation="govuk-back-link" class="das-button-link">Back</a>
+    <div class="govuk-grid-column-two-thirds">
+        <a asp-show="@Model.PageInfo.IsWizard" asp-route="@RouteNames.Employer_Get" esfa-automation="link-back" class="govuk-back-link">Back</a>
 
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Important dates</h1>
 
@@ -18,48 +18,60 @@
         <form asp-route="@RouteNames.Training_Post" asp-route-wizard="@Model.PageInfo.IsWizard" novalidate>
 
             <div esfa-validation-marker-for="ClosingDate" class="govuk-form-group">
-                <fieldset>
-                    <legend class="govuk-label govuk-!-font-weight-bold">Application closing date<span class="govuk-visually-hidden"> (in numeric format DD MM YYYY)</span></legend>
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-!-font-weight-bold">Application closing date<span class="govuk-visually-hidden"> (in numeric format DD MM YYYY)</span></legend>
                     <span class="govuk-hint">For example, @exampleClosingDate.AsInputHintDisplayDate()</span>
 
                     <span esfa-validation-message-for="ClosingDate" class="govuk-error-message"></span>
 
-                    <div class="form-date">
-                        <div class="govuk-form-group govuk-form-group-day">
-                            <label asp-for="ClosingDay" class="form-label">Day</label>
-                            <input asp-for="ClosingDay" class="form-control" type="number" min="1" max="31">
+                    <div class="govuk-date-input">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label asp-for="ClosingDay" class="govuk-label govuk-date-input__label">Day</label>
+                                <input asp-for="ClosingDay" class="govuk-input govuk-date-input__input govuk-input--width-2" type="number" min="1" max="31">
+                            </div>
                         </div>
-                        <div class="govuk-form-group govuk-form-group-month">
-                            <label asp-for="ClosingMonth" class="form-label">Month</label>
-                            <input asp-for="ClosingMonth" class="form-control" type="number" min="1" max="12">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label asp-for="ClosingMonth" class="govuk-label govuk-date-input__label">Month</label>
+                                <input asp-for="ClosingMonth" class="govuk-input govuk-date-input__input govuk-input--width-2" type="number" min="1" max="12">
+                            </div>
                         </div>
-                        <div class="govuk-form-group govuk-form-group-year">
-                            <label asp-for="ClosingYear" class="form-label">Year</label>
-                            <input asp-for="ClosingYear" class="form-control" type="number" min="@Model.CurrentYear">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label asp-for="ClosingYear" class="govuk-label govuk-date-input__label">Year</label>
+                                <input asp-for="ClosingYear" class="govuk-input govuk-date-input__input govuk-input--width-4" type="number" min="@Model.CurrentYear">
+                            </div>
                         </div>
                     </div>
                 </fieldset>
             </div>
 
             <div esfa-validation-marker-for="StartDate" class="govuk-form-group">
-                <fieldset>
+                <fieldset class="govuk-fieldset">
                     <legend class="govuk-label govuk-!-font-weight-bold">When do you expect the apprentice to start?<span class="govuk-visually-hidden"> (in numeric format DD MM YYYY)</span></legend>
                     <span class="govuk-hint">For example, @exampleStartingDate.AsInputHintDisplayDate()</span>
 
                     <span esfa-validation-message-for="StartDate" class="govuk-error-message"></span>
 
-                    <div class="form-date">
-                        <div class="govuk-form-group govuk-form-group-day">
-                            <label asp-for="StartDay" class="form-label">Day</label>
-                            <input asp-for="StartDay" class="form-control" type="number" min="1" max="31">
+                    <div class="govuk-date-input">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label asp-for="StartDay" class="govuk-label govuk-date-input__label">Day</label>
+                                <input asp-for="StartDay" class="govuk-input govuk-date-input__input govuk-input--width-2" type="number" min="1" max="31">
+                            </div>
                         </div>
-                        <div class="govuk-form-group govuk-form-group-month">
-                            <label asp-for="StartMonth" class="form-label">Month</label>
-                            <input asp-for="StartMonth" class="form-control" type="number" min="1" max="12">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label asp-for="StartMonth" class="govuk-label govuk-date-input__label">Month</label>
+                                <input asp-for="StartMonth" class="govuk-input govuk-date-input__input govuk-input--width-2" type="number" min="1" max="12">
+                            </div>
                         </div>
-                        <div class="govuk-form-group govuk-form-group-year">
-                            <label asp-for="StartYear" class="form-label">Year</label>
-                            <input asp-for="StartYear" class="form-control" type="number" min="@Model.CurrentYear">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label asp-for="StartYear" class="govuk-label govuk-date-input__label">Year</label>
+                                <input asp-for="StartYear" class="govuk-input govuk-date-input__input govuk-input--width-4" type="number" min="@Model.CurrentYear">
+                            </div>
                         </div>
                     </div>
                 </fieldset>
@@ -70,7 +82,7 @@
                 <span class="govuk-hint">Start typing the name of the course or choose an option from the list</span>
                 <span esfa-validation-message-for="SelectedProgrammeId" class="govuk-error-message"></span>
 
-                <select asp-for="SelectedProgrammeId" class="form-control">
+                <select asp-for="SelectedProgrammeId" class="govuk-select">
                     <option value="">Please select</option>
                     @foreach (var programme in Model.Programmes)
                     {
@@ -80,11 +92,13 @@
             </div>
 
             <div class="govuk-form-group">
-                <fieldset>
+                <fieldset class="govuk-fieldset">
                     <legend class="govuk-label govuk-!-font-weight-bold">Disability Confident (optional)</legend>
-                    <div class="multiple-choice">
-                        <input asp-for="IsDisabilityConfident" class="govuk-checkboxes__input" type="checkbox" value="true">
-                        <label asp-for="IsDisabilityConfident">This vacancy is <a href="https://www.gov.uk/government/collections/disability-confident-campaign" rel="noopener" target="_blank" title="Disability Confident employer scheme and guidance (opens in a new window)">Disability Confident</a>.</label>
+                    <div class="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                            <input asp-for="IsDisabilityConfident" class="govuk-checkboxes__input" type="checkbox" value="true">
+                            <label asp-for="IsDisabilityConfident" class="govuk-label govuk-checkboxes__label">This vacancy is <a href="https://www.gov.uk/government/collections/disability-confident-campaign" rel="noopener" target="_blank" title="Disability Confident employer scheme and guidance (opens in a new window)">Disability Confident</a>.</label>
+                        </div>
                     </div>
                 </fieldset>
             </div>
