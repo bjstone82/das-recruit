@@ -2,7 +2,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">@Model.Title</h1>
-        <hr>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
         <partial name="@PartialNames.ValidationSummary" model='new ValidationSummaryViewModel { ModelState = ViewData.ModelState }' />
 
         <partial name="@PartialNames.ReviewSummary" for="Review" />
@@ -13,8 +13,8 @@
                 <span class="govuk-hint">For example, if the vacancy will involve working outdoors, or lifting heavy objects</span>
                 <span esfa-validation-message-for="ThingsToConsider" class="govuk-error-message"></span>
                 <textarea asp-for="ThingsToConsider" class="govuk-textarea character-count" rows="5" data-val-length-max="350"></textarea>
-                <span class="maxchar-count">350</span>
-                <span class="maxchar-text"> characters remaining</span>
+                <span class="govuk-body maxchar-count">350</span>
+                <span class="govuk-body maxchar-text"> characters remaining</span>
             </div>
             <div class="govuk-form-group">
                 <input type="submit" value="Save and continue" esfa-automation="btn-continue" class="govuk-button save-button" />

@@ -4,7 +4,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">@Model.Title</h1>
-        <hr>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
         <partial name="@PartialNames.ValidationSummary" model='new ValidationSummaryViewModel { ModelState = ViewData.ModelState, OrderedFieldNames = Model.OrderedFieldNames }' />
         
         <partial name="@PartialNames.ReviewSummary" for="Review" />
@@ -12,7 +12,7 @@
         <form asp-route="@RouteNames.ApplicationProcess_Post" novalidate>
             
             <div esfa-validation-marker-for="ApplicationMethod" class="govuk-form-group">
-                <fieldset>
+                <fieldset class="govuk-fieldset">
                     <label class="govuk-label govuk-!-font-weight-bold sfa-govuk-!-margin-bottom-6" id="@Anchors.ApplicationMethodHeading">
                         How will candidates apply for this vacancy?
                         <span class="govuk-hint">All vacancies will be published on Find an apprenticeship</span>

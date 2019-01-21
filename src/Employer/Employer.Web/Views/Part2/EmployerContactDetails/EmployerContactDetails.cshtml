@@ -2,7 +2,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">@Model.Title</h1>
-        <hr>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
         <partial name="@PartialNames.ValidationSummary" model='new ValidationSummaryViewModel { ModelState = ViewData.ModelState, OrderedFieldNames = Model.OrderedFieldNames }' />
 
         <partial name="@PartialNames.ReviewSummary" for="Review" />
@@ -11,17 +11,17 @@
             <div esfa-validation-marker-for="EmployerContactName" class="govuk-form-group">
                 <label asp-for="EmployerContactName" class="govuk-label govuk-!-font-weight-bold">Contact name (optional)</label>
                 <span esfa-validation-message-for="EmployerContactName" class="govuk-error-message"></span>
-                <input asp-for="EmployerContactName" class="form-control" maxlength="100" />
+                <input asp-for="EmployerContactName" class="govuk-input govuk-!-width-one-half" maxlength="100" />
             </div>
             <div esfa-validation-marker-for="EmployerContactEmail" class="govuk-form-group">
                 <label asp-for="EmployerContactEmail" class="govuk-label govuk-!-font-weight-bold">Contact email (optional)</label>
                 <span esfa-validation-message-for="EmployerContactEmail" class="govuk-error-message"></span>
-                <input asp-for="EmployerContactEmail" class="form-control" maxlength="100" />
+                <input asp-for="EmployerContactEmail" class="govuk-input govuk-!-width-one-half" maxlength="100" />
             </div>
             <div esfa-validation-marker-for="EmployerContactPhone" class="govuk-form-group">
                 <label asp-for="EmployerContactPhone" class="govuk-label govuk-!-font-weight-bold">Contact number (optional)</label>
                 <span esfa-validation-message-for="EmployerContactPhone" class="govuk-error-message"></span>
-                <input asp-for="EmployerContactPhone" class="form-control" type="tel" maxlength="16" />
+                <input asp-for="EmployerContactPhone" class="govuk-input govuk-!-width-one-half" type="tel" maxlength="16" />
             </div>
             <div class="govuk-form-group">
                 <input type="submit" value="Save and continue" esfa-automation="btn-continue" class="govuk-button save-button" />
