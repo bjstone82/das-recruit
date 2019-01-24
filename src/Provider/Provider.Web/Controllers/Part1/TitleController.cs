@@ -20,14 +20,6 @@ namespace Esfa.Recruit.Provider.Web.Controllers.Part1
             _orchestrator = orchestrator;
         }
 
-        [HttpGet("create-vacancy", Name = RouteNames.CreateVacancy_Get)]
-        public IActionResult Title()
-        {
-            var vm = _orchestrator.GetTitleViewModel();
-            vm.PageInfo.SetWizard();
-            return View(vm);
-        }
-
         [HttpGet(VacancyTitleRoute, Name = RouteNames.Title_Get)]
         public async Task<IActionResult> Title(VacancyRouteModel vrm, [FromQuery] string wizard = "true")
         {
@@ -36,7 +28,6 @@ namespace Esfa.Recruit.Provider.Web.Controllers.Part1
             return View(vm);
         }
 
-        [HttpPost("create-vacancy", Name = RouteNames.CreateVacancy_Post)]
         [HttpPost(VacancyTitleRoute, Name = RouteNames.Title_Post)]
         public async Task<IActionResult> Title(TitleEditModel m, [FromQuery] bool wizard)
         {

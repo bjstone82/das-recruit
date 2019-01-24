@@ -10,6 +10,7 @@ using Esfa.Recruit.Vacancies.Client.Infrastructure.Services.FAA;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Provider.Web.Orchestrators.Part1;
 
 namespace Esfa.Recruit.Provider.Web.Configuration
 {
@@ -51,6 +52,7 @@ namespace Esfa.Recruit.Provider.Web.Configuration
         private static void RegisterOrchestratorDeps(IServiceCollection services)
         {
             services.AddTransient<DashboardOrchestrator>();
+            services.AddTransient<EmployerOrchestrator>();
             services.AddTransient<VacancyDescriptionOrchestrator>();
         }
 
