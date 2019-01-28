@@ -35,7 +35,7 @@ namespace Esfa.Recruit.Employer.UnitTests.Employer.Web.Orchestrators.Part2
             _orchestrator = new SkillsOrchestrator(_mockClient.Object, _mockVacancyClient.Object, mockLogger.Object, Mock.Of<IReviewSummaryService>());
             _testVacancy = GetTestVacancy();
 
-            _mockClient.Setup(x => x.GetCandidateSkillsAsync()).ReturnsAsync(candidateSkills);
+            _mockVacancyClient.Setup(x => x.GetCandidateSkillsAsync()).ReturnsAsync(candidateSkills);
         }
 
         [Fact]

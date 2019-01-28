@@ -1,20 +1,14 @@
 ﻿using System.Collections.Generic;
 using Esfa.Recruit.Shared.Web.ViewModels;
+using Esfa.Recruit.Shared.Web.ViewModels.Skills;
 
 namespace Esfa.Recruit.Employer.Web.ViewModels.Part2.Skills
 {
-    public class SkillsViewModel : SkillsEditModel
+    public class SkillsViewModel : SkillsViewModelBase
     {
         public string Title { get; internal set; }
-        public List<SkillViewModel> Column1Checkboxes { get; set; }
-        public List<SkillViewModel> Column2Checkboxes { get; set; }
+        public string AddCustomSkillName { get; set; }
+        public List<string> Skills { get; set; }
         public ReviewSummaryViewModel Review { get; set; } = new ReviewSummaryViewModel();
-    }
-
-    public class SkillViewModel
-    {
-        public string Name { get; set; }
-        public bool Selected { get; set; }
-        public string Value { get; set; }
     }
 }

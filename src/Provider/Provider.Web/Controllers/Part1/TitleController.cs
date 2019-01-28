@@ -31,7 +31,7 @@ namespace Esfa.Recruit.Provider.Web.Controllers.Part1
         [HttpPost(VacancyTitleRoute, Name = RouteNames.Title_Post)]
         public async Task<IActionResult> Title(TitleEditModel m, [FromQuery] bool wizard)
         {
-             var response = await _orchestrator.PostTitleEditModelAsync(m, User.ToVacancyUser());
+            var response = await _orchestrator.PostTitleEditModelAsync(m, User.ToVacancyUser());
 
             // if (!response.Success)
             // {

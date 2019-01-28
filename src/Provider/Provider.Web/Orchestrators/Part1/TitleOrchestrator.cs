@@ -65,8 +65,6 @@ namespace Esfa.Recruit.Provider.Web.Orchestrators
                 new VacancyRouteModel{Ukprn = m.Ukprn, VacancyId = m.VacancyId.Value}, RouteNames.Title_Post);
 
             vacancy.Title = m.Title;
-
-            var numberOfPositions = int.TryParse(m.NumberOfPositions, out var n)? n : default(int?);            
             vacancy.NumberOfPositions = numberOfPositions;
 
             return await ValidateAndExecute(

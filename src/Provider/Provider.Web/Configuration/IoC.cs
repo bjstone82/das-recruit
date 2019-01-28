@@ -54,12 +54,15 @@ namespace Esfa.Recruit.Provider.Web.Configuration
             services.AddTransient<DashboardOrchestrator>();
             services.AddTransient<EmployerOrchestrator>();
             services.AddTransient<TitleOrchestrator>();
+            services.AddTransient<ReviewFieldIndicatorMapper>();
+            services.AddTransient<SkillsOrchestrator>();
             services.AddTransient<VacancyDescriptionOrchestrator>();
         }
 
         private static void RegisterMapperDeps(IServiceCollection services)
         {
             services.AddTransient<ReviewFieldIndicatorMapper>();
+            services.AddScoped<IRuleMessageTemplateRunner, RuleMessageTemplateRunner>();
             services.AddScoped<IRuleMessageTemplateRunner, RuleMessageTemplateRunner>();
         }
 
