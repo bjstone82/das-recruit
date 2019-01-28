@@ -5,7 +5,7 @@ namespace Esfa.Recruit.Provider.Web.ViewModels.Part1.Employer
 {
     public class EmployersViewModel : EmployersEditViewModel
     {
-        public List<EmployerViewModel> Employers { get; set; }
+        public IEnumerable<EmployerViewModel> Employers { get; set; }
         public PartOnePageInfoViewModel PageInfo { get; set; }
     }
 }

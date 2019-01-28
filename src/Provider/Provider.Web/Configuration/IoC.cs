@@ -1,6 +1,5 @@
 ﻿using Esfa.Recruit.Provider.Web.Filters;
 using Esfa.Recruit.Provider.Web.Orchestrators;
-using Esfa.Recruit.Provider.Web.Orchestrators.Part2;
 using Esfa.Recruit.Shared.Web.Configuration;
 using Esfa.Recruit.Shared.Web.Mappers;
 using Esfa.Recruit.Shared.Web.RuleTemplates;
@@ -10,7 +9,8 @@ using Esfa.Recruit.Vacancies.Client.Infrastructure.Services.FAA;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Provider.Web.Orchestrators.Part1;
+using Esfa.Recruit.Provider.Web.Orchestrators.Part1;
+using Esfa.Recruit.Provider.Web.Orchestrators.Part2;
 
 namespace Esfa.Recruit.Provider.Web.Configuration
 {

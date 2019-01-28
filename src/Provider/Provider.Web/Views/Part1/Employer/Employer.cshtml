@@ -7,9 +7,9 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Which of your employers do you want create a vacancy for?</h1>
-
         <partial name="@PartialNames.ValidationSummary" model='new ValidationSummaryViewModel { ModelState = ViewData.ModelState }'/>
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Which of your employers do you want create a vacancy for?</h1>
 
         <form asp-route="@RouteNames.CreateVacancy_Post" asp-route-wizard="@Model.PageInfo.IsWizard">
             <div esfa-validation-marker-for="SelectedEmployerId" class="govuk-form-group">

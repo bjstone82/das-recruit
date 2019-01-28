@@ -31,19 +31,19 @@ namespace Esfa.Recruit.Provider.Web.Controllers.Part1
         [HttpPost(VacancyTitleRoute, Name = RouteNames.Title_Post)]
         public async Task<IActionResult> Title(TitleEditModel m, [FromQuery] bool wizard)
         {
-            var response = await _orchestrator.PostTitleEditModelAsync(m, User.ToVacancyUser());
+             var response = await _orchestrator.PostTitleEditModelAsync(m, User.ToVacancyUser());
 
-            if (!response.Success)
-            {
-                response.AddErrorsToModelState(ModelState);
-            }
+            // if (!response.Success)
+            // {
+            //     response.AddErrorsToModelState(ModelState);
+            // }
 
-            if(!ModelState.IsValid)
-            {
-                var vm = await _orchestrator.GetTitleViewModelAsync(m);
-                vm.PageInfo.SetWizard(wizard);
-                return View(vm);
-            }
+            // if(!ModelState.IsValid)
+            // {
+            //     var vm = await _orchestrator.GetTitleViewModelAsync(m);
+            //     vm.PageInfo.SetWizard(wizard);
+            //     return View(vm);
+            // }
 
             // return wizard
             //     ? RedirectToRoute(RouteNames.ShortDescription_Get, new {vacancyId = response.Data})
