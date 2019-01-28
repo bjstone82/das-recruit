@@ -74,7 +74,7 @@ namespace Esfa.Recruit.Vacancies.Client.Infrastructure.QueryStore
             return _queryStore.UpsertAsync(employerVacancyDataItem);
         }
 
-        public Task UpdateProviderVacancyDataAsync(long ukprn, IEnumerable<Employer> employers)
+        public Task UpdateProviderVacancyDataAsync(long ukprn, IEnumerable<EmployerInfo> employers)
         {
             var providerVacancyDataItem = new ProviderEditVacancyInfo
             {
