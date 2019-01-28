@@ -50,7 +50,7 @@ namespace Esfa.Recruit.Provider.Web.Orchestrators.Part1
             return vm;
         }
 
-        public async Task<OrchestratorResponse> PostEmployerEditViewModelAsync(EmployersEditViewModel viewModel, VacancyUser user)
+        public async Task<OrchestratorResponse<Guid>> PostEmployerEditViewModelAsync(EmployersEditViewModel viewModel, VacancyUser user)
         {
             if (!viewModel.VacancyId.HasValue) // Create if it's a new vacancy
             {

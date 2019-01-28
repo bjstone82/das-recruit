@@ -53,6 +53,7 @@ namespace Esfa.Recruit.Provider.Web.Configuration
         {
             services.AddTransient<DashboardOrchestrator>();
             services.AddTransient<EmployerOrchestrator>();
+            services.AddTransient<TitleOrchestrator>();
             services.AddTransient<VacancyDescriptionOrchestrator>();
         }
 
