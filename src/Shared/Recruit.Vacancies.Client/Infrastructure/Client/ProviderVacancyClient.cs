@@ -9,10 +9,25 @@ using Esfa.Recruit.Vacancies.Client.Infrastructure.QueryStore.Projections.Provid
 namespace Esfa.Recruit.Vacancies.Client.Infrastructure.Client
 {
     public partial class VacancyClient : IProviderVacancyClient
-    {       
-        public Task<Guid> CreateVacancyAsync(SourceOrigin origin, string employerAccountId, long ukprn, VacancyUser user, UserType userType)
+    {              
+        public async Task<Guid> CreateVacancyAsync(SourceOrigin origin, 
+            string employerAccountId, long ukprn, VacancyUser user, UserType userType)
         {
-            throw new NotImplementedException();
+            var vacancyId = GenerateVacancyId();
+
+            var command = new CreateProviderOwnedVacancyCommand
+            {
+                VacancyId = vacancyId,
+                User = user,
+                UserType = userType,
+                EmployerAccountId = employerAccountId,    
+                Ukprn = ukprn,           
+                Origin = origin
+            };
+
+            await _messaging.SendCommandAsync(command);
+
+            return vacancyId;
         }
 
         public Task<ProviderDashboard> GetDashboardAsync(long ukprn)
@@ -29,7 +44,7 @@ namespace Esfa.Recruit.Vacancies.Client.Infrastructure.Client
         {
             return Task.FromResult(new ProviderEditVacancyInfo{
                 Employers = new List<EmployerInfo>{                    
-                    {new EmployerInfo{ Id = "", Name = "Rogers and Federrers"  }}
+                    {new EmployerInfo{ Id = "1234", Name = "Rogers and Federrers"  }}
                 }
             });
         }
